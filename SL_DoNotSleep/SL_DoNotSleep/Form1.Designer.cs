@@ -96,6 +96,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Resize += new System.EventHandler(this.Form1_Resize_1);
             ((System.ComponentModel.ISupportInitialize)(this.pctCurrentStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

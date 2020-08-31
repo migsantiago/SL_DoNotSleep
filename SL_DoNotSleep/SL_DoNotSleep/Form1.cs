@@ -127,7 +127,6 @@ namespace SL_DoNotSleep
         {
             Show();
             this.WindowState = FormWindowState.Normal;
-            ntfIconTray.Visible = false;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -230,6 +229,17 @@ namespace SL_DoNotSleep
             btnToolTipRunStartup.InitialDelay = 1000;
             btnToolTipRunStartup.ReshowDelay = 500;
             btnToolTipRunStartup.SetToolTip(chkRunOnStartup, "If set, this program will run on Windows startup");
+        }
+
+        private void Form1_Resize_1(object sender, EventArgs e)
+        {
+            //if the form is minimized  
+            //hide it from the task bar  
+            //and show the system tray icon (represented by the NotifyIcon control)  
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+            }
         }
     }
 }
